@@ -1,0 +1,61 @@
+/* src/components/Banner/Banner.css */
+
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+ /* src/components/Banner/Banner.css */
+/*  
+ .banner {
+    width: 90vw; /* 90% of the viewport width */
+    /* height: 45vh; 45% of the viewport height */
+    /* overflow: hidden; /* Hide any overflow to ensure the image fits well */
+    /* position: fixed; Fix the position to cover the viewport */
+    /* top: 40%; Center vertically */
+    /* left: 50%; Center horizontally */
+    /* transform: translate(-50%, -50%); Adjust the position to center it */
+    /* margin: 0; Remove default margin */
+    /* padding: 0; Remove default padding */
+    /* display: flex; Use flexbox for centering */ 
+    /* justify-content: center; Center content horizontally */
+    /* align-items: center; Center content vertically */
+    /* background-color: rgba(0, 0, 0, 0.5); Temporary background color */
+  
+    .banner {
+        width: 90vw; /* 90% of the viewport width */
+        height: 45vh; /* 45% of the viewport height */
+        overflow: hidden; /* Hide any overflow to ensure the image fits well */
+        position: fixed; /* Fix the position to cover the viewport */
+        top: 15%; /* Align to the top */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Center horizontally */
+        background-color: rgba(0, 0, 0, 0.5); /* Temporary background color */
+        z-index: 1; /* Ensure the banner is on top */
+    }
+    
+    .banner .slick-slide {
+        height: 100%; /* Ensure slides take up full height */
+        display: flex; /* Flexbox for centering */
+        align-items: center; /* Center image vertically */
+    }
+    
+    .banner-image {
+        width: 90vw; /* Ensure the image covers the banner container */
+        height: 45vh; /* Ensure the image covers the banner container */
+        object-fit: cover; /* Ensure the image covers the entire area */
+        display: block; /* Remove any default inline spacing */
+    }
+    
+
+
+
+.slick-dots {
+    bottom: 10px; /* Position dots near the bottom */
+}
+
+.slick-dots li button:before {
+    color: #fff; /* Color for the dots */
+}
+
+.slick-prev, .slick-next {
+    z-index: 1; /* Ensure arrows are above other content */
+    color: #fff; /* Color for arrows */
+}
