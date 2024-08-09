@@ -1,131 +1,200 @@
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 
 const BookingFormModal = ({ isOpen, onClose }) => {
-    // Define state at the top level of the component
+    // State to manage form data
     const [formData, setFormData] = useState({
         name: '',
-        email: '',
+        age: '',
         contactNumber: '',
-        serviceType: '',
+        email: '',
+        patientHistory: '',
         description: '',
-        gender: '', // Add gender field to state
+        gender: '',
+        conditions: {
+            diabetesType1: false,
+            diabetesType2: false,
+            hypertension: false,
+            parkinson: false,
+            noneOfTheAbove: false,
+        }
     });
 
     // Handle input changes
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
+        const { name, value, type, checked } = e.target;
+        if (type === 'checkbox') {
+            setFormData(prev => ({
+                ...prev,
+                conditions: {
+                    ...prev.conditions,
+                    [name]: checked
+                }
+            }));
+        } else {
+            setFormData(prev => ({
+                ...prev,
+                [name]: value
+            }));
+        }
     };
 
     // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Process form submission here
         console.log('Form submitted:', formData);
         onClose(); // Close the modal after submission
     };
 
-    // Early return to handle modal visibility
     if (!isOpen) return null;
 
-    return (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-            <div className="bg-white p-6 rounded shadow-lg max-w-sm w-full relative">
-                <h3 className="text-2xl font-bold mb-4">Booking Form</h3>
+    return ReactDOM.createPortal(
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+            <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg max-h-[90vh] overflow-y-auto relative">
+                <button
+                    onClick={onClose}
+                    className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-3xl"
+                >
+                    &times;
+                </button>
+                <h2 className="text-3xl font-semibold mb-6 text-center">Book an Appointment</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                        <label htmlFor="name" className="block text-lg font-medium mb-1">Name</label>
+                    <label className="block">
+                        <span className="text-lg font-medium">Name:</span>
                         <input
-                            id="name"
-                            name="name"
                             type="text"
+                            name="name"
                             value={formData.name}
                             onChange={handleChange}
-                            className="w-full border border-gray-300 rounded p-2"
+                            className="mt-1 block w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500"
                             required
                         />
-                    </div>
-                    <div>
-                        <label htmlFor="email" className="block text-lg font-medium mb-1">Email</label>
+                    </label>
+                    <label className="block">
+                        <span className="text-lg font-medium">Age:</span>
                         <input
-                            id="email"
-                            name="email"
-                            type="email"
-                            value={formData.email}
+                            type="number"
+                            name="age"
+                            value={formData.age}
                             onChange={handleChange}
-                            className="w-full border border-gray-300 rounded p-2"
+                            className="mt-1 block w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500"
                             required
                         />
-                    </div>
-                    <div>
-                        <label htmlFor="contactNumber" className="block text-lg font-medium mb-1">Contact Number</label>
+                    </label>
+                    <label className="block">
+                        <span className="text-lg font-medium">Contact Number:</span>
                         <input
-                            id="contactNumber"
-                            name="contactNumber"
                             type="tel"
+                            name="contactNumber"
                             value={formData.contactNumber}
                             onChange={handleChange}
-                            className="w-full border border-gray-300 rounded p-2"
+                            className="mt-1 block w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500"
                             required
                         />
-                    </div>
-                    <div>
-                        <label htmlFor="serviceType" className="block text-lg font-medium mb-1">Type of Service</label>
-                        <select
-                            id="serviceType"
-                            name="serviceType"
-                            value={formData.serviceType}
+                    </label>
+                    <label className="block">
+                        <span className="text-lg font-medium">Email:</span>
+                        <input
+                            type="email"
+                            name="email"
+                            value={formData.email}
                             onChange={handleChange}
-                            className="w-full border border-gray-300 rounded p-2"
+                            className="mt-1 block w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500"
                             required
-                        >
-                            <option value="">Select a service</option>
-                            <option value="Doctorsathome">Doctorsathome</option>
-                            <option value="Nursesathome">Nursesathome</option>
-                            <option value="Labservices">Labservices</option>
-                        </select>
-                    </div>
-                    <div className="relative">
-                        <label htmlFor="description" className="block text-lg font-medium mb-1">Description</label>
+                        />
+                    </label>
+                    <label className="block">
+                        <span className="text-lg font-medium">Patient History:</span>
                         <textarea
-                            id="description"
+                            name="patientHistory"
+                            value={formData.patientHistory}
+                            onChange={handleChange}
+                            className="mt-1 block w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500"
+                            rows="3"
+                        />
+                    </label>
+                    <label className="block">
+                        <span className="text-lg font-medium">Description:</span>
+                        <textarea
                             name="description"
                             value={formData.description}
                             onChange={handleChange}
-                            className="w-full border border-gray-300 rounded p-2"
+                            className="mt-1 block w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500"
                             rows="3"
                         />
-                        <div className="absolute bottom-2 right-2">
-                            <label htmlFor="gender" className="block text-sm font-medium mb-1">Gender</label>
-                            <select
-                                id="gender"
-                                name="gender"
-                                value={formData.gender}
+                    </label>
+                    <label className="block">
+                        <span className="text-lg font-medium">Gender:</span>
+                        <select
+                            name="gender"
+                            value={formData.gender}
+                            onChange={handleChange}
+                            className="mt-1 block w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        >
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </label>
+                    <fieldset className="space-y-2">
+                        <legend className="text-lg font-medium">Medical Conditions:</legend>
+                        <label className="flex items-center space-x-2">
+                            <input
+                                type="checkbox"
+                                name="diabetesType1"
+                                checked={formData.conditions.diabetesType1}
                                 onChange={handleChange}
-                                className="w-full border border-gray-300 rounded p-2"
-                            >
-                                <option value="">Select Gender</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                    </div>
+                            />
+                            <span>Diabetes Type 1</span>
+                        </label>
+                        <label className="flex items-center space-x-2">
+                            <input
+                                type="checkbox"
+                                name="diabetesType2"
+                                checked={formData.conditions.diabetesType2}
+                                onChange={handleChange}
+                            />
+                            <span>Diabetes Type 2</span>
+                        </label>
+                        <label className="flex items-center space-x-2">
+                            <input
+                                type="checkbox"
+                                name="hypertension"
+                                checked={formData.conditions.hypertension}
+                                onChange={handleChange}
+                            />
+                            <span>Hypertension</span>
+                        </label>
+                        <label className="flex items-center space-x-2">
+                            <input
+                                type="checkbox"
+                                name="parkinson"
+                                checked={formData.conditions.parkinson}
+                                onChange={handleChange}
+                            />
+                            <span>Parkinson's</span>
+                        </label>
+                        <label className="flex items-center space-x-2">
+                            <input
+                                type="checkbox"
+                                name="noneOfTheAbove"
+                                checked={formData.conditions.noneOfTheAbove}
+                                onChange={handleChange}
+                            />
+                            <span>None of the Above</span>
+                        </label>
+                    </fieldset>
                     <button
                         type="submit"
-                        className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
+                        className="w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500"
                     >
                         Submit
                     </button>
                 </form>
-                <button
-                    onClick={onClose}
-                    className="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
-                >
-                    &times;
-                </button>
             </div>
-        </div>
+        </div>,
+        document.body
     );
 };
 

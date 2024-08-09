@@ -30,18 +30,11 @@ const Home = () => {
                 <p className="mt-4 text-lg">
                     The Best Home Health Care Services In Bangalore. Darshan Elders Care Pvt Ltd provides home health care services expertly designed to provide trusted, high quality, personalized, and professional services at home in Bangalore.
                 </p>
-                <button
-                    onClick={openModal}
-                    className="mt-6 bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
-                >
-                    Book Now
-                </button>
                 <img 
                     src={healthcareImage} // Use the imported image
                     alt="Healthcare" 
                     className="mt-6 mx-auto max-w-full h-auto" 
                 />
-              
             </div>
 
             {/* BookingFormModal Component */}

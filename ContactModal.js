@@ -20,9 +20,9 @@ const ContactModal = ({ isOpen, onClose }) => {
 
     if (!isOpen) return null;
 
-    const handleBookNowClick = () => {
-        setIsFormModalOpen(true);
-    };
+    // const handleBookNowClick = () => {
+    //     setIsFormModalOpen(true);
+    // };
 
     const handleCategoryChange = (e) => {
         setSearchCategory(e.target.value);
@@ -89,12 +89,12 @@ const ContactModal = ({ isOpen, onClose }) => {
                     </div>
                 </div>
                 <div className="modal-footer">
-                    <button
+                    {/* <button
                         onClick={handleBookNowClick}
                         className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
                     >
                         Book Now
-                    </button>
+                    </button> */}
                     <button
                         onClick={onClose}
                         className="text-gray-600 hover:text-gray-800"
