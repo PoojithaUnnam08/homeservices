@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import MedicalBanner from '../components/Banner/Medicalbanner'; // Reuse the existing Banner component
+import Medical_Banner from '../components/Banner/Medicalbanner'; // Reuse the existing Banner component
 
 // Directly importing images
 import electricWheelChairImage from '../assests/images/electric wheel chair.jpg';
@@ -20,6 +20,8 @@ import anklesupport from '../assests/images/anklesupport.jpg';
 import armwrist from '../assests/images/armwrist.jpg';
 import wristbrace from '../assests/images/wristbrace.jpg';
 import wristsplint from '../assests/images/wristsplint.jpg';
+import wheelChair from '../assests/images/wheelChair.jpg'
+
 
 // Product component with optional quantity input
 const Product = ({ product, showQuantity }) => {
@@ -75,22 +77,23 @@ const Product = ({ product, showQuantity }) => {
 
 // Sample product data with images and categories
 const products = [
-    { id: 1, name: 'Electric Wheel Chair', price: '100', image: electricWheelChairImage, category: 'Wheelchairs' },
-    { id: 2, name: 'Hospital Cot', price: '150', image: hospitalCotImage, category: 'Cots' },
-    { id: 3, name: 'Wheel Chair', price: '200', image: wheelChairImage, category: 'Wheelchairs' },
-    { id: 4, name: 'Walker', price: '200', image: walkerImage, category: 'Walkers' },
-    { id: 5, name: 'Accu Check Glucometer', price: '200', image: glucometerImage, category: 'Glucometers' },
-    { id: 6, name: 'Glucometer Strips', price: '200', image: glucometerStripsImage, category: 'Glucometers' },
-    { id: 7, name: 'Blood Pressure Machine', price: '200', image: bpMachineImage, category: 'Blood Pressure' },
-    { id: 8, name: 'Himalaya Gentle Wipes', price: '200', image: himalayagentlewipes, category: 'Wipes' },
-    { id: 9, name: 'BabyCare', price: '200', image: babycare, category: 'Baby Care' },
-    { id: 10, name: 'Metal Walker', price: '200', image: metalwalker, category: 'Walkers' },
-    { id: 11, name: 'Stainless Steel Walker', price: '200', image: stainlesssteelwalker, category: 'Walkers' },
-    { id: 12, name: 'Dr Ortho BackSupport Belt', price: '200', image: drorthobacksupportbelt, category: 'Support Belts' },
-    { id: 13, name: 'Ankle Support', price: '200', image: anklesupport, category: 'Support Belts' },
-    { id: 14, name: 'Arm Wrist', price: '200', image: armwrist, category: 'Support Belts' },
-    { id: 15, name: 'Wrist Brace', price: '200', image: wristbrace, category: 'Support Belts' },
-    { id: 16, name: 'Wrist Splint', price: '200', image: wristsplint, category: 'Support Belts' },
+    { id: 1, name: 'Electric Wheel Chair', price: '42,000', image: electricWheelChairImage, category: 'Wheelchairs' },
+    { id: 2, name: 'Hospital Cot', price: '15,999', image: hospitalCotImage, category: 'Cots' },
+    { id: 3, name: 'Wheel Chair', price: '4,500', image: wheelChairImage, category: 'Wheelchairs' },
+    { id: 4, name: 'Walker', price: ',1,900', image: walkerImage, category: 'Walkers' },
+    { id: 5, name: 'Accu Check Glucometer', price: ',1,836', image: glucometerImage, category: 'Glucometers' },
+    { id: 6, name: 'Glucometer Strips', price: '700', image: glucometerStripsImage, category: 'Glucometers' },
+    { id: 7, name: 'Blood Pressure Machine', price: '1,850', image: bpMachineImage, category: 'Blood Pressure' },
+    { id: 8, name: 'Himalaya Gentle Wipes', price: '170', image: himalayagentlewipes, category: 'Wipes' },
+    { id: 9, name: 'BabyCare', price: '400', image: babycare, category: 'Baby Care' },
+    { id: 10, name: 'Metal Walker', price: '2,500', image: metalwalker, category: 'Walkers' },
+    { id: 11, name: 'Stainless Steel Walker', price: '1,500', image: stainlesssteelwalker, category: 'Walkers' },
+    { id: 12, name: 'Dr Ortho BackSupport Belt', price: '499', image: drorthobacksupportbelt, category: 'Support Belts' },
+    { id: 13, name: 'Ankle Support', price: '399', image: anklesupport, category: 'Support Belts' },
+    { id: 14, name: 'Arm Wrist', price: '229', image: armwrist, category: 'Support Belts' },
+    { id: 15, name: 'Wrist Brace', price: '399', image: wristbrace, category: 'Support Belts' },
+    { id: 16, name: 'Wrist Splint', price: '328', image: wristsplint, category: 'Support Belts' },
+    {id: 17, name: 'wheelChair', price: '4,000', image: wheelChair, category: 'Wheelchairs'},
 ];
 
 const Medicalequipments = () => {
@@ -109,7 +112,7 @@ const Medicalequipments = () => {
             <h1 className="text-3xl font-bold text-gray-800 mb-6">Medical Equipments</h1>
             <p className="mt-4 text-gray-600 mb-8">Details about Medical equipments will go here.</p>
             
-            <MedicalBanner
+            <Medical_Banner
                 categories={categories}
                 selectedCategory={selectedCategory}
                 onCategoryChange={setSelectedCategory}
