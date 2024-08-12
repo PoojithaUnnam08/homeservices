@@ -51,19 +51,19 @@ const Cart = () => {
             <div className="mt-6 flex space-x-4">
                 <button
                     onClick={handleProceedToCheckout}
-                    className="bg-green-500 text-white py-2 px-6 rounded-lg shadow-md hover:bg-green-600 transition-colors"
+                    className="bg-blue-600 text-white py-2 px-6 rounded-lg shadow-md hover:bg-blue-600 transition-colors"
                 >
                     Proceed to Checkout
                 </button>
                 <button
                     onClick={handleContinueToPurchase}
-                    className="bg-blue-500 text-white py-2 px-6 rounded-lg shadow-md hover:bg-blue-600 transition-colors"
+                    className="bg-blue-600 text-white py-2 px-6 rounded-lg shadow-md hover:bg-blue-600 transition-colors"
                 >
                     Continue to Purchase
                 </button>
                 <button
                     onClick={handleClearCart}
-                    className="bg-red-500 text-white py-2 px-6 rounded-lg shadow-md hover:bg-red-600 transition-colors"
+                    className="bg-blue-600 text-white py-2 px-6 rounded-lg shadow-md hover:bg-blue-600 transition-colors"
                 >
                     Clear Cart
                 </button>

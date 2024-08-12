@@ -50,7 +50,7 @@ body {
 }
 
 header {
-  background-color: #4CAF50;
+  background-color: blue;
   color: white;
   padding: 1rem;
   text-align: center;
@@ -78,7 +78,8 @@ main {
 }
 
 h2 {
-  color: #4CAF50;
+  /* color: #4CAF50; */
+  color:blue;
 }
 
 ul {

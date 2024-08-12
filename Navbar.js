@@ -27,7 +27,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="bg-green-600 text-white shadow-md fixed top-0 left-0 w-full z-10 py-2">
+        <nav className="bg-blue-800 text-white shadow-md fixed top-0 left-0 w-full z-10 py-2">
             <div className="container mx-auto flex items-center justify-between px-4 h-12">
                 <Link to="/" className="flex items-center">
                     <img src={logo} alt="Logo" className="h-10 mr-2" /> {/* Adjust logo size */}
@@ -36,39 +36,39 @@ const Navbar = () => {
                     </span>
                 </Link>
                 <div className="hidden lg:flex lg:items-center lg:space-x-4 text-sm">
-                    <Link to="/" className="px-3 py-1 hover:bg-green-700 rounded">Home</Link>
-                    <Link to="/about" className="px-3 py-1 hover:bg-green-700 rounded">About Us</Link>
+                    <Link to="/" className="px-3 py-1 hover:bg-blue-700 rounded">Home</Link>
+                    <Link to="/about" className="px-3 py-1 hover:bg-blue-700 rounded">About Us</Link>
                     <div className="relative group">
-                        <button className="px-3 py-1 hover:bg-green-700 rounded text-sm">
+                        <button className="px-3 py-1 hover:bg-blue-700 rounded text-sm">
                             Home Care
                         </button>
                         <div className="absolute left-0 mt-1 w-40 bg-white text-gray-800 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
-                            <Link to="/bloodtest" className="block px-3 py-1 hover:bg-gray-100 hover:text-green-500">Bloodtest</Link>
-                            <Link to="/reports" className="block px-3 py-1 hover:bg-gray-100 hover:text-green-500">Reports</Link>
-                            <Link to="/physio" className="block px-3 py-1 hover:bg-gray-100 hover:text-green-500">Physio</Link>
+                            <Link to="/bloodtest" className="block px-3 py-1 hover:bg-gray-100 hover:text-blue-500">Bloodtest</Link>
+                            <Link to="/reports" className="block px-3 py-1 hover:bg-gray-100 hover:text-blue-500">Reports</Link>
+                            <Link to="/physio" className="block px-3 py-1 hover:bg-gray-100 hover:text-blue-500">Physio</Link>
                         </div>
                     </div>
                     <div className="relative group">
-                        <button className="px-3 py-1 hover:bg-green-700 rounded text-sm">
+                        <button className="px-3 py-1 hover:bg-blue-700 rounded text-sm">
                             Services
                         </button>
                         <div className="absolute left-0 mt-1 w-56 bg-white text-gray-800 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
-                            <Link to="/elderscare" className="block px-3 py-1 hover:bg-gray-100 hover:text-green-500">Elderscare</Link>
-                            <Link to="/oldagehome" className="block px-3 py-1 hover:bg-gray-100 hover:text-green-500">Old Age Home</Link>
-                            <Link to="/medicalequipments" className="block px-3 py-1 hover:bg-gray-100 hover:text-green-500">Medical Equipments</Link>
-                            <Link to="/nursesathome" className="block px-3 py-1 hover:bg-gray-100 hover:text-green-500">Nurses At Home</Link>
-                            <Link to="/doctorsathome" className="block px-3 py-1 hover:bg-gray-100 hover:text-green-500">Doctors At Home</Link>
-                            <Link to="/labservices" className="block px-3 py-1 hover:bg-gray-100 hover:text-green-500">Lab Services</Link>
+                            <Link to="/elderscare" className="block px-3 py-1 hover:bg-gray-100 hover:text-blue-600">Elderscare</Link>
+                            <Link to="/oldagehome" className="block px-3 py-1 hover:bg-gray-100 hover:text-blue-600">Old Age Home</Link>
+                            <Link to="/medicalequipments" className="block px-3 py-1 hover:bg-gray-100 hover:text-blue-600">Medical Equipments</Link>
+                            <Link to="/nursesathome" className="block px-3 py-1 hover:bg-gray-100 hover:text-blue-600">Nurses At Home</Link>
+                            <Link to="/doctorsathome" className="block px-3 py-1 hover:bg-gray-100 hover:text-blue-600">Doctors At Home</Link>
+                            <Link to="/labservices" className="block px-3 py-1 hover:bg-gray-100 hover:text-blue-600">Lab Services</Link>
                         </div>
                     </div>
-                    <Link to="/contact" className="px-3 py-1 hover:bg-green-700 rounded text-sm">Contact Us</Link>
-                    <Link to="/blog" className="px-3 py-1 hover:bg-green-700 rounded text-sm">Blog</Link>
+                    <Link to="/contact" className="px-3 py-1 hover:bg-blue-700 rounded text-sm">Contact Us</Link>
+                    <Link to="/blog" className="px-3 py-1 hover:bg-blue-700 rounded text-sm">Blog</Link>
                     
                     {/* Select Location Dropdown */}
                     <div className="relative z-30">
                         <button
                             onClick={toggleDropdown}
-                            className="px-3 py-1 bg-green-700 text-white rounded hover:bg-green-800 focus:outline-none text-sm"
+                            className="px-3 py-1 bg-blue-800 text-white rounded hover:bg-blue-700 focus:outline-none text-sm"
                         >
                             {selectedLocation || 'Select Location'}
                         </button>
@@ -91,7 +91,7 @@ const Navbar = () => {
                     {/* "Book Now" Button */}
                     <button
                         onClick={openModal}
-                        className="ml-4 px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 focus:outline-none text-sm"
+                        className="ml-4 px-3 py-1 bg-blue-700 text-white rounded hover:bg-blue-600 focus:outline-none text-sm"
                     >
                         Book Now
                     </button>
