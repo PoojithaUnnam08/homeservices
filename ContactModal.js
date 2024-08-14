@@ -56,7 +56,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                     </p>
                     <div className="mb-4">
                         <LoadScript
-                            googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY"
+                            googleMapsApiKey="AlzaSyDoLGstdDZeBLJXm2lJwokc5O0tHG22Ml"
                             libraries={['places']} // Include places library for autocomplete if needed
                         >
                             <GoogleMap
